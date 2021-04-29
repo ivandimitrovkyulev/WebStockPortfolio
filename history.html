@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+    <h3>Transaction History</h3>
+    <style>
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    </style>
+
+    <table>
+        <tr>
+            <td><b>Symbol</b></td>
+            <td><b>Shares</b></td>
+            <td><b>Price</b></td>
+            <td><b>Date</b></td>
+        </tr>
+
+    {% for info in transactions %}
+        <tr>
+            <td>{{ info.symbol }}</td>
+            <td>{{ info.shares }}</td>
+            <td>{{ info.price }}</td>
+            <td>{{ info.date }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

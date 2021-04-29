@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h3>Portfolio</h3>
+    <style>
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    </style>
+
+    <table>
+        <tr>
+            <td><b>Symbol</b></td>
+            <td><b>Name</b></td>
+            <td><b>Shares</b></td>
+            <td><b>Price</b></td>
+            <td><b>Total</b></td>
+        </tr>
+
+    {% for info in portfolio %}
+        <tr>
+            <td>{{ info.symbol }}</td>
+            <td>{{ info.name }}</td>
+            <td>{{ info.shares }}</td>
+            <td>{{ info.price }}</td>
+            <td>{{ info.total }}</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td>CASH</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ balance }}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ total }}</td>
+    </tr>
+    </table>
+
+{% endblock %}
