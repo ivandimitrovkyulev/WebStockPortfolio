@@ -1,2 +1,4 @@
-# CS50-Pset8-Finance
-A website implementing a stocks portfolio, where you can query stock prices from the web and then make purchases to add to your portfolio.
+WebFinance
+===========
+
+A website implementing a stocks portfolio. You can create an account, querythe price of a stock using its ticker, buy and sell stocks and view your portfolio history and its value.
